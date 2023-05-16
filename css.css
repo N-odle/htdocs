@@ -1,0 +1,527 @@
+body {
+  background-color: #1a1a1a;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+.custom-checkbox {
+  margin-left: 4px;
+  display: inline-block;
+  width: 10.5px;
+  height: 10.5px;
+  border: 2px solid #999;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.custom-checkbox.checked {
+  background-color: #0067bb;
+}
+
+.custom-checkbox.checked::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translateY(-50%) translateX(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.small-input {
+  width: 17%;
+  max-width: 150px; /* You can set a maximum width if you want */
+}
+.reservation-text{
+  font-size: 1.4vw;
+}
+header {
+  font-family: 'KoHo', sans-serif;
+  background-color: #001b42;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.booking-system-title-container {
+  font-family: 'KoHo', sans-serif;
+  padding-right: 10vw;
+}
+
+#booking-system-title {
+  font-family: 'KoHo', sans-serif;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2.4vw;
+  /* padding-right: 20vw; */
+}
+
+.logo {
+
+  padding: 7px;
+  margin-left: 3vw;
+  width: 15.6%;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: white;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 3.2vw;
+  height: 1.8vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.reservation-options {
+  border: 2px solid #757575; /* Change the color value as needed */
+  border-radius: 10px; /* Adjust the value for desired corner roundness */
+  padding: 15px; /* Add some padding inside the box */
+  display: inline-block; /* Make the div shrink to its content */
+  margin-bottom: 20px; /* Add some margin below the box if needed */
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4vw;
+  width: 1.5vw;
+  left: 0.2vw;
+  bottom: 0.2vw;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(1.3vw);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch-label-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5vw;
+  font-size: 1vw;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.button-container {
+  align-items: center;
+  text-align: center;
+}
+
+.booking-system {
+  width: 30%;
+  margin: 30px auto;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: calc(70% - 40px);
+  /* subtract 40px for calendar padding */
+}
+
+.ipad-list {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.ipad-item span {
+  max-width: calc(100% - 20px);
+  white-space: pre-wrap;
+}
+
+
+
+.no-bullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.no-bullets li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2px;
+}
+
+.no-bullets input[type=checkbox] {
+  margin-right: 0px;
+}
+
+.theme-text {
+  color: white;
+}
+
+body:not(.dark-theme) .theme-text {
+  color: #1a1a1a;
+}
+
+.dark-theme {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.dark-theme header {
+  background-color: #001b42;
+}
+
+body:not(.dark-theme) {
+  background-color: white;
+  color: #1a1a1a;
+}
+
+body:not(.dark-theme) header {
+  background-color: #001b42;
+}
+
+body:not(.dark-theme) h1 {
+  color: white;
+}
+
+button,
+select {
+  background-color: #0066cc;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.calendar-container {
+  display: grid;
+/*  grid-template-columns: 1fr;*/
+  width: 90%;
+  margin: 0 auto;
+  font-size: 0.8em;
+}
+
+button:hover,
+select:hover {
+  background-color: #0059a0;
+}
+
+button:active,
+select:active {
+  background-color: #004d8c;
+}
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#calendar {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  padding-left: 5px;
+  margin-right: 50px;
+}
+
+.ipad-container {
+  display: grid;
+/*  grid-template-columns: 1fr;*/
+  width: 90%;
+  margin: 0 auto;
+}
+
+.fc-popover:not(.dark-theme) {
+  background-color: rgba(255, 255, 255, 0.75);
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.fc-event-main:not(.dark-theme) {
+  color: rgb(0, 0, 0);
+}
+
+.help-container {
+  position: relative;
+  width: 2.5vw;
+  height: 2.5vw;
+  padding-right: 3vw;
+  margin-top: 3vw;
+}
+
+.help-icon {
+  display: inline-block;
+  cursor: pointer;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+
+.help-tooltip {
+  margin-top: 0;
+  display: none;
+  position: absolute;
+  z-index: 10;
+  border: 1px solid #ccc;
+  padding: 1vw;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(40vw);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: calc(9px + 0.5vw);
+  background-color: #f9f9f9;
+  /* common background color */
+  color: black;
+  /* common text color */
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Styles for help tooltip in dark theme */
+.dark-theme .help-tooltip {
+  background-color: #2f2f2f;
+  color: white;
+}
+
+.help-container:hover .help-tooltip {
+  display: block;
+}
+
+
+.help-container:hover .help-tooltip {
+  display: block;
+}
+
+.dark-theme .fc-popover {
+  background-color: rgba(50, 50, 50, 0.75);
+  color: rgb(255, 255, 255);
+}
+
+.dark-theme .fc-event-main:not(.dark-theme) {
+  color: rgb(255, 255, 255);
+}
+
+/* Add this to your CSS file */
+.title-transition {
+  transition: opacity 0.5s;
+}
+
+input[type="date"],
+input[type="time"] {
+  width: 50%;
+  height: 2rem;
+  vertical-align: middle;
+}
+
+.header-container {
+  font-family: 'KoHo', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-help-container {
+  display: flex;
+  align-items: center;
+}
+
+input[type="time"] {
+  width: 40%;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    margin-right: -20vw;
+  }
+
+  .help-container {
+    display: none;
+  }
+
+  #booking-system-title {
+    text-align: center;
+    font-size: 5vw;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /* Move the calendar under the booking system */
+  .centered-container {
+    display: flex;
+    flex-direction: column-reverse; /* Change this line */
+    width: 100%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .booking-system {
+    width: 90%;
+    /* Adjust the width for mobile */
+    margin: 15px auto;
+    /* Adjust the margin for mobile */
+  }
+
+  .ipad-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    word-wrap: normal;
+    text-align: center;
+    overflow-wrap: normal;
+  }
+
+  /* Adjust text size */
+  body {
+    font-size: 15px;
+    /* Adjust to the desired size for mobile */
+  }
+
+  /* Adjust header text size */
+  header {
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+    text-align: center;
+    margin-right: -10vw;
+    /* Adjust to the desired size for mobile */
+  }
+
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 16px;
+  }
+
+  .toggle-switch-container {
+    display: none;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 1.5px;
+    bottom: 1.5px;
+    background-color: white;
+    transition: .4s;
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .theme-text {
+    font-size: 30px;
+  }
+
+  #calendar {
+    flex: 1;
+    max-width: 100%;
+    height: fit-content;
+    margin: 2%;
+  }
+
+  .calendar-container {
+    font-size: .5em;
+  }
+  .reservation-text{
+    font-size: 20px;
+  }
+  .fc-popover{
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 50vw;
+  }
+}

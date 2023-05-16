@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css.css">
+  <title>MSA iPad Booking System</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.6/index.global.min.js"></script>
+  <link rel="icon" type="image/png"
+    href="https://msasupport.au-attachments.freshservice.com/data/helpdesk/attachments/production/75027527222/logo/MSA_Logo_resize.png?Expires=1682933662&Signature=Oriwxn~V3vQZYGVHCfjl5JE3ipcdY~2X0BhN7lUZLgFv9QfEwWXFzMlOksvKhLIReSGqB3vZFYFHEEKJxZFHEmKaOk7gBR~qhFZbdAmQoxFnTGfpdwZY4TB652yu~d3fzXniO1xZxKroXkxIBA-kXJRQYm~uRjSG-13Z3MJsjq08klFmu6n61wRA9nW6J0KispqbFfYsr6v6rQ3SuVK1stTGPuAfIdWtKu0vSh4ROpZNZPi~xXyPhRSCGYSTcSMekUJ7Ewtjvlw4Ao~V3gnJr9a5Or2BWnN58wqva8U4UuGasCkYHxc0Hkdo6GiW-9Gn1RbpJHN3x9e6wF1FEIqYOg__&Key-Pair-Id=APKAIPHBXWY2KT5RCMPQ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=KoHo:wght@700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <link rel="stylesheet" href="css.css">
+  <header>
+    <div class="header-container">
+      <img class="logo"
+        src="https://i0.wp.com/msa.qld.edu.au/wp-content/uploads/2022/08/MasterySchoolsAustralia_Logo2.png?fit=708%2C288&ssl=1"
+        alt="MSA Logo">
+      <div class="help-container">
+        <img class="help-icon" src="helpicon.png" alt="How to use guide">
+        <div class="help-tooltip">
+          <h2>iPad Booking Help Guide</h2>
+          <p>Welcome to our iPad booking system! This help guide will walk you through the process of booking, reserving, and returning iPads using our website. Just follow these simple steps:</p>
+          <ol>
+              <li><strong>Select Campus:</strong> Start by choosing the appropriate campus from the dropdown menu.</li>
+              <li><strong>Enter Staff Name:</strong> Type your name in the "Staff Name" field.</li>
+              <li><strong>Select iPads:</strong> Choose which iPads you've taken by confirming the numbers on the iPad itself and selecting the corresponding checkboxes.</li>
+              <li><strong>Set Return Time:</strong> Indicate how long you need the iPads by selecting an option from the "To be returned in" dropdown menu.</li>
+              <li><strong>Book iPads:</strong> Click on the "Book iPads" button to complete your booking.</li>
+          </ol>
+          <p>To return the iPads:</p>
+          <ol>
+              <li><strong>Select iPads:</strong> Choose the iPads you're returning by selecting the corresponding checkboxes.</li>
+              <li><strong>Return iPads:</strong> Click on the "Return iPads" button to complete the return process.</li>
+          </ol>
+          <p>To reserve iPads for a future date and time:</p>
+          <ol>
+              <li>Follow steps 1-4 from the iPad booking process.</li>
+              <li><strong>Enter Reservation Date and Time:</strong> Select the date and time you'd like to reserve the iPads using the provided fields.</li>
+              <li><strong>Reserve iPads:</strong> Click on the "Reserve iPads" button to finalize your reservation.</li>
+          </ol>
+          <p>That's it! You're now ready to book, reserve, and return iPads using our website. </p>
+          <p>If you notice any bugs / errors, please send a detailed email to ITService@msa.qld.edu.au (With pictures if possible).</p>
+        </div>
+      </div>
+    <div class="booking-system-title-container">  
+      <b><h1 id="booking-system-title"></h1></b>
+    </div>
+      <div class="toggle-switch-container">
+        <div class="switch-label-container">
+          <span style="color: white;">Light / Dark Mode</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" onclick="toggleTheme()">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </header>
+  
+  
+
+  <div class="centered-container">
+    <div class="booking-system">
+      <h1 class="theme-text">iPad Booking:</h1>
+      <select id="site-selector">
+        <option value="Unspecified">Please pick your campus:</option>
+        <option value="Southport">Southport</option>
+        <option value="Coolangatta">Coolangatta</option>
+        <option value="Springfield">Springfield</option>
+        <!-- Add more options for each site -->
+      </select>
+      <label for="staff-name-input">Staff Name:</label>
+      <input type="text" id="staff-name-input" name="staff-name-input" required style="margin-bottom: 10px;">
+      <ul id="ipad-list" class="no-bullets"></ul>
+      <div class="button-container">
+        <button id="book-ipads">Book iPads</button>
+        <button id="return-ipads">Return iPads</button>
+        <div>
+          <label for="return-time" id="return-time-label">To be returned in:</label>
+          <select id="return-time" name="return-time">
+            <option value="default" selected>Select return time</option>
+            <option value="5">5 Minutes</option>
+            <option value="10">10 Minutes</option>
+            <option value="15">15 Minutes</option>
+            <option value="20">20 Minutes</option>
+            <option value="25">25 Minutes</option>
+            <option value="30">30 Minutes</option>
+            <option value="35">35 Minutes</option>
+            <option value="40">40 Minutes</option>
+            <option value="45">45 Minutes</option>
+            <option value="50">50 Minutes</option>
+            <option value="55">55 Minutes</option>
+            <option value="60">1 Hour</option>
+            <option value="120">2 Hours</option>
+            <option value="180">3 Hours</option>
+            <option value="480">All day</option>
+            <option value="custom">Custom</option>
+          </select>
+            <div id="custom-time-input" style="display: none;">
+              <input type="number" id="custom-time" min="1" placeholder="" class="small-input">
+              <select id="custom-time-unit">
+                <option value="minutes">Minutes</option>
+                <option value="hours">Hours</option>
+                <option value="days">Days</option>
+              </select>
+            </div>
+
+        </div>
+        <div class="reservation-options">
+          <div>
+          <div class="reservation-text"><label for="iPad Reservations"><strong>iPad Reservations:</strong> </label></div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <label for="reservation-date" style="margin-bottom: 5px;">Reservation Date:</label>
+            <input type="date" id="reservation-date" name="reservation-date" required
+              style="margin-bottom: 10px; width: 50%;text-align: center;">
+            <label for="reservation-time" style="margin-bottom: 5px;">Reservation Time:</label>
+            <input type="time" id="reservation-time" name="reservation-time" required
+              style="width: 50%;text-align: center;">
+          </div>
+        </div>
+        <div>
+          <button id="reserve-ipads">Reserve iPads</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="calendar-container">
+      <div id="calendar"></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark-theme');
+    }
+  </script>
+  <script type="module">
+    import { updateInitialHeaderText } from './Bookingsys.js';
+
+    function initializeApp() {
+      initializeAppLogic();
+      updateInitialHeaderText(SITETOCHANGE);
+    }
+  </script>
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('dark-theme');
+  }
+
+  function setupCustomTimeInput() {
+  const dueBackSelect = document.getElementById('return-time');
+  const customTimeInput = document.getElementById('custom-time-input');
+
+  dueBackSelect.addEventListener('change', () => {
+    if (dueBackSelect.value === 'custom') {
+      customTimeInput.style.display = 'block';
+    } else {
+      customTimeInput.style.display = 'none';
+    }
+  });
+
+  dueBackSelect.dispatchEvent(new Event('change'));
+}
+
+  document.addEventListener('DOMContentLoaded', setupCustomTimeInput);
+</script>
+
+</body>
+
+</html>
