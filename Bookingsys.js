@@ -168,6 +168,7 @@ async function handleSiteChange(siteName) {
           return moment(info.date).format('dddd DD/MM');
         },
         hiddenDays: [0, 6],
+        allDaySlot: false,
         slotMinTime: '08:00:00',
         slotMaxTime: '18:15:00',
         slotDuration: '00:15:00',

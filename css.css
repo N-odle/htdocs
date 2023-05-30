@@ -16,6 +16,26 @@ body {
   border-radius: 3px;
 }
 
+.light-theme .fc-col-header-cell {
+  background-color: white;
+  color: #1a1a1a;
+}
+
+.dark-theme .fc-col-header-cell {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.light-theme .fc-timegrid-axis {
+  background-color: white;
+  color: #1a1a1a;
+}
+
+.dark-theme .fc-timegrid-axis {
+  background-color: #1a1a1a;
+  color: white;
+}
+
 .custom-checkbox.checked {
   background-color: #0067bb;
 }
